@@ -1,0 +1,234 @@
+/* Compulsory task 1 */
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Setting body and main to width 100% so it matches the window width. */
+/* The style is set that objects adjust equally to width when edited by height remains and use of scroll is applied when necessary*/
+body {
+    background-color: white;
+    margin: auto;
+    width: 100%;
+}
+
+main {
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image set to absolute so it is ignored by other elements and 0% so it is not visible */
+img {
+    position: absolute;
+    width: 100%;
+    opacity: 0%;
+}
+
+/* my main div box below, containing a grid of 2 rows and 2 columns  */
+#box{
+    position: relative;
+    display: grid;
+    grid-template-columns: 10px auto;
+    grid-template-rows: auto auto;
+    grid-gap: .15em;
+    width: 100%;
+    height: 100%;
+}
+
+/* Below I gor my 3 different divs, table1, table2 configured to match the look of the periodic table. table-numbers to span 2 rows */
+.table-numbers{
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: repeat(9, 70px);
+    grid-gap: .15em;
+}
+
+.table1 {
+    display: grid;
+    /* setting the columns to be equal regarless content (as in sample table) - link to where I learned this is at the bottom of the page */
+    grid-template-columns:repeat(18, minmax(0, 1fr));
+    grid-template-rows: repeat(7, 70px);
+    grid-gap: .15em;
+}
+.table2{
+    display: grid;
+    /* setting the columns to be equal regarless content (as in sample table) - link to where I learned this is at the bottom of the page */
+    grid-template-columns:repeat(18, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 70px);
+    grid-gap: .15em;
+    margin-top: 15px;
+}
+
+/* Below I edit the text speficically and generally to match the table in the sample. */
+#number {
+    position: relative;
+}
+
+#h3-number{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 900;
+}
+
+#h3-stars{
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .8rem;
+}
+
+h1{
+    text-align: center;
+}
+h2, h3, h4, p {  
+    color: #212121;
+    margin: auto;
+    text-align: center;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-bottom: .2rem;
+}
+
+h3 {
+    font-size: .7rem;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+}
+
+
+p{
+    font-size: .6rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: .1rem;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+}
+
+/* Below I set the different element group's colour for the boxes. I inspected the sample and copied the backgrounds. 
+The ids are set in javascript automatically */
+#Nonmetal, #Halogen, #Alkali-Metal, #Alkaline-Earth-Metal, 
+#Transition-Metal, #Post-Transition-Metal, #Metalloid,
+#Noble-Gas, #Lanthanide, #Actinide {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 15%);
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+}
+
+#Nonmetal, #Halogen{
+    background: linear-gradient(110deg, rgba(255, 255, 0, 0.2), rgba(255, 255, 0, 0.3));
+
+}
+
+#Alkali-Metal {
+    background: linear-gradient(110deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.25));
+
+}
+
+#Alkaline-Earth-Metal{
+    background: linear-gradient(110deg, rgba(64, 64, 255, 0.2), rgba(64, 64, 255, 0.25));
+}
+
+#Transition-Metal {
+    background: linear-gradient(110deg, rgba(0, 128, 255, 0.2), rgba(0, 128, 255, 0.3));
+}
+
+#Post-Transition-Metal{
+    background: linear-gradient(110deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.3));
+}
+
+#Metalloid{
+    background: linear-gradient(110deg, rgba(140, 190, 0, 0.2), rgba(140, 190, 0, 0.3));
+}
+
+#Noble-Gas{
+    background: linear-gradient(110deg, rgba(255, 152, 0, 0.2), rgba(255, 152, 0, 0.3));
+}
+
+#Lanthanide {
+    background: linear-gradient(110deg, rgba(0, 255, 255, 0.25), rgba(0, 255, 255, 0.35));
+}
+
+#Actinide {
+    background: linear-gradient(110deg, rgba(64, 255, 192, 0.25), rgba(64, 255, 192, 0.35));
+}
+
+/* media query to reduce the size of the text when boxes get smaller. */
+@media (max-width: 900px){
+    body {
+        width: auto;
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    
+    h3 {
+        font-size: .6rem;
+    }
+    
+    p{
+        font-size: .45rem;
+    }
+}
+
+/* media query to replace the table with an image as requested in exercise */
+@media (max-width: 675px){
+    body {
+        width: auto;
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+
+    .table2, .table1, .table-numbers {
+        opacity: 0%;
+        position: absolute;
+        height: 0;
+    }
+
+    main {
+        padding: .5rem;
+    }
+
+    #box{
+        display: flex;
+    }
+
+    img {
+        display: flex;
+        position: relative;
+        opacity: 100%;
+        padding: .2rem;
+        float: none;
+    }
+    footer {
+        position: relative;
+    }
+}
+
+/* Resources I used below:
+https://stackoverflow.com/questions/10624771/css-sibling-absolute-positioning
+https://www.w3schools.com/css/css_grid.asp
+https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-column-row
+https://www.digitalocean.com/community/tutorials/css-css-grid-layout-repeat-notation?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers
+https://css-tricks.com/introduction-fr-css-unit/
+https://fonts.google.com/specimen/Roboto
+https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid 
+*/

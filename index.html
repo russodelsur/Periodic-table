@@ -1,0 +1,53 @@
+<!-- Conspulsory task 2 -->
+
+<!-- Document type and html tag with language below: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Starting my head with links to stylesheet and viewport information -->
+<head>
+  <title>Periodic table</title>
+  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<!-- Beginning of my body, divided in 3 elements. Header, main and footer. -->
+<body>
+    <header>
+        <h1>Periodic Table of Elements</h1>
+    </header>
+    <main>
+
+        <!-- I created my container box for the grid layout with 3 divs, numbering to the right, top periodic table and bottom periodic table. -->
+        <div id="box">
+
+            <!-- Image for when the screen goes below 675px of width -->
+            <img src="./image.png" alt="Periodic Table">
+
+            <!-- 1 column grid with numbers -->
+            <div class="table-numbers">
+                <h3>1</h3>
+                <h3>2</h3>
+                <h3>3</h3>
+                <h3>4</h3>
+                <h3>5</h3>
+                <h3>6</h3>
+                <h3>7</h3>
+            </div>
+            <!-- divs getting information from script, it is cleaner to manage the info in javascript -->
+            <div class="table1"></div>
+            <div class="table2"></div>
+        </div>
+    </main>
+
+    <!-- Footer. -->
+    <footer>
+        <h4>Site by Ruslan</h4>
+    </footer>
+    <script type='text/javascript' src='./periodic.js'></script>
+</body>
+</html>
